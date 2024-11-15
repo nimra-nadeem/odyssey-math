@@ -45,6 +45,8 @@ from openai import OpenAI
 from openai import Stream
 from openai.types.chat import ChatCompletion, ChatCompletionChunk
 
+from openai import AzureOpenAI
+
 __all__ = ["OpenAIClient"]
 
 
@@ -72,7 +74,8 @@ class OpenAIClient:
             if api_key is None:
                 load_dotenv()
                 api_key = os.getenv('OPENAI_API_KEY')
-            self.client = OpenAI(api_key=api_key)
+            # self.client = OpenAI(api_key=api_key)
+            self.client = AzureOpenAI()
         except OpenAIError:
             raise OpenAIError("The OpenAI client is not available. Please check the OpenAI API key.")
 
