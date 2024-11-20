@@ -20,8 +20,9 @@ def convert_json_to_jsonl(input_file, output_file):
     print(f"Converted {input_file} to {output_file}")
 
 def main():
-    output_dir = "jsonl/"
-    input_dir = "json/"
+    SAMPLE_SIZE = 260
+    output_dir = f"irt/jsonl/{SAMPLE_SIZE}/"
+    input_dir = f"irt/json/{SAMPLE_SIZE}/"
 
     input_files = glob.glob(os.path.join(input_dir, "*_odyssey.json"))
     
