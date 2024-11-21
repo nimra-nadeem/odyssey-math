@@ -74,14 +74,15 @@ class OpenAIClient:
             if api_key is None:
                 load_dotenv()
                 api_key = os.getenv('OPENAI_API_KEY')
-            # self.client = OpenAI(api_key=api_key)
-            self.client = AzureOpenAI()
+            self.client = OpenAI(api_key=api_key)
+            # self.client = AzureOpenAI()
         except OpenAIError:
             raise OpenAIError("The OpenAI client is not available. Please check the OpenAI API key.")
 
         # Set the default generate arguments for OpenAI's chat completions
         self.generate_args = {
-            "model": "gpt-4-turbo",
+            # "model": "gpt-4-turbo",
+            "model": "gpt-4o-2024-08-06",
             "temperature": 0.,
             "top_p": 1.0
         }

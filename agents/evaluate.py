@@ -28,7 +28,7 @@ class Evalutor(Agent):
         
         super().__init__()  
 
-        self.openai_agent = OpenAIClient(api_key=OPENAI_API_KEY, model='gpt-4-turbo-2024-04-09', temperature=0., top_p=0.8,
+        self.openai_agent = OpenAIClient(api_key=OPENAI_API_KEY, model='gpt-4o-2024-08-06', temperature=0., top_p=0.8,
                                          max_tokens=2096)
         self.llm_evaluate_agent = LLMAgent(EVALUATION, self.openai_agent, stream=False)
 
